@@ -1,0 +1,118 @@
+{
+  "info": {
+    "_postman_id": "6c4b46c1-5412-44b0-98f5-0251c7c94921",
+    "name": "MovieApp - Steven (Localhost)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "AUTH - Signup",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://localhost:4001/api/v1/auth/signup",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre_usuario\": \"Steven\",\n  \"email\": \"test@test.com\",\n  \"contrasena\": \"123456\"\n}"
+        }
+      }
+    },
+    {
+      "name": "AUTH - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "http://localhost:4001/api/v1/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@test.com\",\n  \"contrasena\": \"123456\"\n}"
+        }
+      }
+    },
+    {
+      "name": "MOVIES - Obtener todas",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4001/api/v1/peliculas"
+      }
+    },
+    {
+      "name": "MOVIES - Buscar por título",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4001/api/v1/peliculas/busqueda?title=matrix"
+      }
+    },
+    {
+      "name": "MOVIES - Buscar por ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4001/api/v1/peliculas/1"
+      }
+    },
+    {
+      "name": "MOVIES - Crear película",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "tit_pelicula", "value": "Matrix", "type": "text" },
+            { "key": "director", "value": "Wachowski", "type": "text" },
+            { "key": "ano_pelicula", "value": "1999", "type": "text" },
+            { "key": "genero", "value": "Sci-Fi", "type": "text" },
+            { "key": "duracion", "value": "136", "type": "text" },
+            { "key": "descripcion", "value": "Neo descubre la verdad", "type": "text" },
+            { "key": "imagen", "type": "file", "src": "" }
+          ]
+        },
+        "url": "http://localhost:4001/api/v1/peliculas"
+      }
+    },
+    {
+      "name": "FAVORITOS - Obtener favoritos",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4001/api/v1/favoritos"
+      }
+    },
+    {
+      "name": "FAVORITOS - Añadir favorito",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:4001/api/v1/favoritos/1"
+      }
+    },
+    {
+      "name": "FAVORITOS - Eliminar favorito",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:4001/api/v1/favoritos/1"
+      }
+    },
+    {
+      "name": "USERS - Obtener todos",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:4001/api/v1/usuarios"
+      }
+    },
+    {
+      "name": "UPLOADS - Subir archivo",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "imagen", "type": "file", "src": "" }
+          ]
+        },
+        "url": "http://localhost:4001/api/v1/uploads"
+      }
+    }
+  ]
+}
